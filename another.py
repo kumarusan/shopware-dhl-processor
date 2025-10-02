@@ -50,14 +50,14 @@ def index():
 
                 # Process the data (adjust column names as needed)
                 output_df = pd.DataFrame({
-                    "SEND_NAME1": "Tonerio",
-                    "SEND_NAME2": "Berpack GmbH",
-                    "SEND_STREET": "Kurfürstendamm",
-                    "SEND_HOUSENUMBER": "195",
-                    "SEND_PLZ": "10707",
-                    "SEND_CITY": "Berlin",
+                    "SEND_NAME1": "Tintenflash",
+                    "SEND_NAME2": "",
+                    "SEND_STREET": "Rheinstr.",
+                    "SEND_HOUSENUMBER": "11",
+                    "SEND_PLZ": "14513",
+                    "SEND_CITY": "Teltow",
                     "SEND_COUNTRY": "DEU",
-                    "SEND_EMAIL": "info@tonerio.de",
+                    "SEND_EMAIL": "info@tintenflash.de",
                     "RECV_NAME1": df["customer_firstname"] + " " + df["customer_lastname"],
                     "RECV_NAME2": df["shipping_address_company"],
                     "RECV_EMAIL": df["customer_email"],
@@ -72,7 +72,7 @@ def index():
 
 
                 # Save the processed data to a new CSV file
-                output_file_path = "./processed_output.csv"
+                output_file_path = "./another_processed_output.csv"
                 output_df.to_csv(output_file_path, index=False, encoding='utf-8')
 
                 # Send the file to the user for download
@@ -84,4 +84,4 @@ def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8002)
+    app.run(debug=True, port=8004)
